@@ -11,15 +11,19 @@
       <name>Patrick O'Brien</name>
       <email>obrienpat86@gmail.com</email>
     </author>
+    <contributor>
+      <name> Helen Williams</name>
+      <email>hewilliams@lincoln.ac.uk</email>
+      </contributor>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <summary>The Harvard author-date style, 2nd edition, as outlined by the library of the University of Lincoln.</summary>
+    <summary>The Harvard author-date style (2nd edition) as outlined by the library of the University of Lincoln.</summary>
     <updated>2017-03-20T14:49:43+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
     <terms>
-      <term name="available at">available from</term>
+      <term name="available at">Available from</term>
     </terms>
   </locale>
   <macro name="editor">
@@ -62,7 +66,7 @@
   <macro name="access">
     <choose>
       <if type="webpage">
-        <text term="available at" text-case="capitalize-first" suffix=" "/>
+        <text term="available from" text-case="capitalize-first" suffix=" "/>
         <text variable="URL"/>
         <group delimiter=" " prefix=" [" suffix="]">
           <text term="accessed"/>
@@ -100,7 +104,7 @@
         </date>
       </if>
       <else>
-        <text term="no date" form="short"/>
+        <text term="undated" form="short"/>
       </else>
     </choose>
   </macro>
@@ -116,6 +120,13 @@
         <text variable="edition"/>
       </else>
     </choose>
+    <choose>
+      <if variable="edition">
+        <text variable="edition" prefix=, "/>
+                                           </if>
+                                           <else>
+                                           <group prefix=. "/>
+        </choose>
   </macro>
   <macro name="pages">
     <group>
